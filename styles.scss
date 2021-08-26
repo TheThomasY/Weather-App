@@ -1,0 +1,47 @@
+$bg-color1: rgb(47, 150, 163);
+$bg-color2: rgb(48, 62, 143);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient($bg-color1, $bg-color2);
+  font-family: sans-serif;
+  color: white;
+}
+
+.location,
+.temp {
+  height: 30vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.temp {
+  flex-direction: column;
+}
+
+.degree-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    margin: 10px;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
