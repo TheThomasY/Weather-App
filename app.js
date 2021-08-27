@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
   let weatherDescription = document.querySelector('.weather-description');
   let locationName = document.querySelector('.location-name');
   let tempDegree = document.querySelector('.temp-degree');
+  let tempWeek = [];
 
   let date = new Date();
   const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -58,6 +59,18 @@ window.addEventListener('load', () => {
         })
         .then((dataWeek) => {
           console.log(dataWeek);
+          for (let i = 5; i < 38; i += 8) {
+            tempWeek.push(dataWeek.list[i].main.temp);
+          }
+
+          let tempWeekRow = document.getElementById('tr-temp-week');
+          for (let i = 0; i < 5; i++) {
+            let cell = tempWeekRow.insertCell();
+            let temp = document.createTextNode(
+              (tempWeek[i] - 273.15).toFixed(0) + ' \xB0'
+            );
+            cell.appendChild(temp);
+          }
         });
     });
   }
