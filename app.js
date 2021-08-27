@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
           // Icon for weather
           document.getElementById(
             'weather-img'
-          ).src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+          ).src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
         });
 
       const apiWeek = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=8387cd973eb203343fef3dfb3fb92974`;
