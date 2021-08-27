@@ -8,17 +8,32 @@
     <title>Weather</title>
   </head>
   <body>
-    <div class="location">
-      <h1 class="location-timezone">Timezone</h1>
-      <h2 id="location-error"></h2>
-      <p>Icon</p>
-    </div>
-    <div class="temp">
-      <div class="degree-section">
-        <h2 class="temp-degree">34</h2>
-        <span>F</span>
+    <div class="card">
+      <h1 class="location-name"></h1>
+      <h2 class="weather-description"></h2>
+      <div class="img-temp">
+        <div><img id="weather-img" src="" /></div>
+        <div class="temp">
+          <h3 class="temp-degree"></h3>
+        </div>
       </div>
-      <div class="temp-description">Cold</div>
+      <table class="week-table">
+        <tr class="tr-days" id="tr-days"></tr>
+        <tr class="tr-max-temp">
+          <td>30°</td>
+          <td>34°</td>
+          <td>36°</td>
+          <td>34°</td>
+          <td>37°</td>
+        </tr>
+        <tr class="tr-min-temp">
+          <td>17°</td>
+          <td>22°</td>
+          <td>19°</td>
+          <td>23°</td>
+          <td>19°</td>
+        </tr>
+      </table>
     </div>
 
     <script src="/app.js"></script>
