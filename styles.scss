@@ -39,9 +39,22 @@ body {
   margin-top: 30px;
 }
 
+.description-wind {
+  display: flex;
+  align-items: center;
+}
+
 .weather-description {
   margin-top: 30px;
   color: $temp-color;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.wind-speed {
+  margin-top: 30px;
+  margin-left: auto;
+  color: $faded-color;
   font-weight: 400;
   font-size: 1em;
 }

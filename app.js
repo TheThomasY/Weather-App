@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
   let long;
   let lat;
   let weatherDescription = document.querySelector('.weather-description');
+  let windSpeed = document.querySelector('.wind-speed');
   let locationName = document.querySelector('.location-name');
   let tempDegree = document.querySelector('.temp-degree');
   let tempWeek = [];
@@ -30,9 +31,11 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then((dataCurrent) => {
-          // console.log(dataCurrent);
+          console.log(dataCurrent);
+          // Get relevant API data
           const { temp } = dataCurrent.main;
           const { main, icon } = dataCurrent.weather[0];
+          const { speed } = dataCurrent.wind;
           // Set DOM Elements from the API --------------------
 
           // Current temperature
@@ -41,6 +44,9 @@ window.addEventListener('load', () => {
 
           // Current weather description
           weatherDescription.textContent = main;
+
+          // Current wind speed
+          windSpeed.textContent = 'Wind ' + speed + 'm/s';
 
           // Current Location
           locationName.textContent = dataCurrent.name;
@@ -58,7 +64,9 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then((dataWeek) => {
-          console.log(dataWeek);
+          // console.log(dataWeek);
+
+          // Temperature forecast for next 5 days
           for (let i = 5; i < 38; i += 8) {
             tempWeek.push(dataWeek.list[i].main.temp);
           }
