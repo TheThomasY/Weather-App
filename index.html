@@ -20,6 +20,20 @@
           <h3 class="temp-degree"></h3>
         </div>
       </div>
+      <div class="toggle-buttons">
+        <h4 onclick="toggleTodayForecast()" id="toggle-today">Today</h4>
+        <h4
+          onclick="toggleWeekForecast()"
+          id="toggle-week"
+          class="button-selected"
+        >
+          5 days
+        </h4>
+      </div>
+      <table class="hour-table">
+        <tr class="tr-hours"></tr>
+        <tr class="tr-temp"></tr>
+      </table>
       <table class="week-table">
         <tr class="tr-days" id="tr-days"></tr>
         <tr class="tr-temp" id="tr-temp-week"></tr>
