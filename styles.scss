@@ -108,14 +108,23 @@ body {
   border-bottom: 2px solid $accent;
 }
 
+.hour-table {
+  margin-top: 40px;
+  text-align: center;
+  // display: none;
+}
+
 .week-table {
   margin-top: 40px;
   text-align: center;
+  display: none;
 }
 
-.tr-days {
+.tr-days,
+.tr-hours {
   td {
     padding-bottom: 15px;
+    font-size: 0.9em;
   }
 }
 
