@@ -88,6 +88,38 @@ body {
   color: #777;
 }
 
+.toggle-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#toggle-today,
+#toggle-week {
+  font-size: 0.8em;
+  font-weight: 200;
+  text-align: center;
+  width: 100%;
+  color: black;
+  cursor: pointer;
+}
+
+#toggle-today {
+  border-right: 1px solid #999;
+}
+
+.button-selected:after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  padding-top: 2px;
+  border-bottom: 2px solid #fbbc04;
+}
+
 .week-table {
   margin-top: 40px;
   text-align: center;

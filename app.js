@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  let long;
+  let lon;
   let lat;
   let weatherDescription = document.querySelector('.weather-description');
   let windSpeed = document.querySelector('.wind-speed');
@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then((dataCurrent) => {
-          console.log(dataCurrent);
+          // console.log(dataCurrent);
           // Get relevant API data
           const { temp } = dataCurrent.main;
           const { main, icon } = dataCurrent.weather[0];
@@ -64,10 +64,10 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then((dataWeek) => {
-          // console.log(dataWeek);
+          console.log(dataWeek);
 
           // Temperature forecast for next 5 days
-          for (let i = 5; i < 38; i += 8) {
+          for (let i = 7; i < 40; i += 8) {
             tempWeek.push(dataWeek.list[i].main.temp);
           }
 
@@ -83,3 +83,25 @@ window.addEventListener('load', () => {
     });
   }
 });
+
+// Change forecast view
+
+let toggleToday = document.getElementById('toggle-today');
+let toggleWeek = document.getElementById('toggle-week');
+let weekTable = document.querySelector('.week-table');
+
+const toggleTodayForecast = () => {
+  if (!toggleToday.classList.contains('button-selected')) {
+    toggleToday.classList.add('button-selected');
+    toggleWeek.classList.remove('button-selected');
+    weekTable.style.display = 'none';
+  }
+};
+
+const toggleWeekForecast = () => {
+  if (!toggleWeek.classList.contains('button-selected')) {
+    toggleWeek.classList.add('button-selected');
+    toggleToday.classList.remove('button-selected');
+    weekTable.style.display = '';
+  }
+};

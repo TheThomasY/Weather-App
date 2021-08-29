@@ -4,6 +4,8 @@ $card-color: #fff;
 $temp-color: #777;
 $faded-color: #999;
 
+$accent: #fbbc04;
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
 
 * {
@@ -75,7 +77,35 @@ body {
   font-weight: 300;
   font-size: 5.5em;
   line-height: 0.2em;
-  color: #777;
+  color: $temp-color;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#toggle-today,
+#toggle-week {
+  font-size: 0.8em;
+  font-weight: 200;
+  text-align: center;
+  width: 100%;
+  color: black;
+  cursor: pointer;
+}
+
+#toggle-today {
+  border-right: 1px solid $faded-color;
+}
+
+.button-selected:after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  padding-top: 2px;
+  border-bottom: 2px solid $accent;
 }
 
 .week-table {
