@@ -21,18 +21,18 @@
         </div>
       </div>
       <div class="toggle-buttons">
-        <h4 onclick="toggleTodayForecast()" id="toggle-today">Today</h4>
         <h4
-          onclick="toggleWeekForecast()"
-          id="toggle-week"
+          onclick="toggleTodayForecast()"
+          id="toggle-today"
           class="button-selected"
         >
-          5 days
+          Today
         </h4>
+        <h4 onclick="toggleWeekForecast()" id="toggle-week">5 days</h4>
       </div>
       <table class="hour-table">
-        <tr class="tr-hours"></tr>
-        <tr class="tr-temp"></tr>
+        <tr class="tr-hours" id="tr-hours"></tr>
+        <tr class="tr-temp" id="tr-temp-hours"></tr>
       </table>
       <table class="week-table">
         <tr class="tr-days" id="tr-days"></tr>

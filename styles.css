@@ -120,13 +120,21 @@ body {
   border-bottom: 2px solid #fbbc04;
 }
 
-.week-table {
+.hour-table {
   margin-top: 40px;
   text-align: center;
 }
 
-.tr-days td {
+.week-table {
+  margin-top: 40px;
+  text-align: center;
+  display: none;
+}
+
+.tr-days td,
+.tr-hours td {
   padding-bottom: 15px;
+  font-size: 0.9em;
 }
 
 .tr-temp {

@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
   let locationName = document.querySelector('.location-name');
   let tempDegree = document.querySelector('.temp-degree');
   let tempWeek = [];
+  let tempHours = [];
 
   let date = new Date();
   const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -14,6 +15,26 @@ window.addEventListener('load', () => {
     let cell = daysRow.insertCell();
     let day = document.createTextNode(days[(date.getDay() + i) % 7]);
     cell.appendChild(day);
+  }
+
+  let time = date.getHours();
+  console.log(Math.floor(time / 3));
+
+  const times = [
+    '00:00',
+    '03:00',
+    '06:00',
+    '09:00',
+    '12:00',
+    '15:00',
+    '18:00',
+    '21:00',
+  ];
+  let timesRow = document.getElementById('tr-hours');
+  for (let i = Math.floor(time / 3); i < Math.floor(time / 3) + 5; i++) {
+    let cell = timesRow.insertCell();
+    let time = document.createTextNode(times[i % 8]);
+    cell.appendChild(time);
   }
 
   var degSpan = document.createElement('span');
@@ -79,6 +100,20 @@ window.addEventListener('load', () => {
             );
             cell.appendChild(temp);
           }
+
+          // Temperature forecast for next 5 days
+          for (let i = 0; i < 5; i += 1) {
+            tempHours.push(dataWeek.list[i].main.temp);
+          }
+
+          let tempHoursRow = document.getElementById('tr-temp-hours');
+          for (let i = 0; i < 5; i++) {
+            let cell = tempHoursRow.insertCell();
+            let temp = document.createTextNode(
+              (tempHours[i] - 273.15).toFixed(0) + ' \xB0'
+            );
+            cell.appendChild(temp);
+          }
         });
     });
   }
@@ -89,12 +124,14 @@ window.addEventListener('load', () => {
 let toggleToday = document.getElementById('toggle-today');
 let toggleWeek = document.getElementById('toggle-week');
 let weekTable = document.querySelector('.week-table');
+let hourTable = document.querySelector('.hour-table');
 
 const toggleTodayForecast = () => {
   if (!toggleToday.classList.contains('button-selected')) {
     toggleToday.classList.add('button-selected');
     toggleWeek.classList.remove('button-selected');
     weekTable.style.display = 'none';
+    hourTable.style.display = 'table';
   }
 };
 
@@ -102,6 +139,7 @@ const toggleWeekForecast = () => {
   if (!toggleWeek.classList.contains('button-selected')) {
     toggleWeek.classList.add('button-selected');
     toggleToday.classList.remove('button-selected');
-    weekTable.style.display = '';
+    weekTable.style.display = 'table';
+    hourTable.style.display = 'none';
   }
 };
