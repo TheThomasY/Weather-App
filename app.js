@@ -18,7 +18,6 @@ window.addEventListener('load', () => {
   }
 
   let time = date.getHours();
-  console.log(Math.floor(time / 3));
 
   const times = [
     '00:00',
@@ -31,7 +30,7 @@ window.addEventListener('load', () => {
     '21:00',
   ];
   let timesRow = document.getElementById('tr-hours');
-  for (let i = Math.floor(time / 3); i < Math.floor(time / 3) + 5; i++) {
+  for (let i = Math.floor(time / 3) + 1; i < Math.floor(time / 3) + 6; i++) {
     let cell = timesRow.insertCell();
     let time = document.createTextNode(times[i % 8]);
     cell.appendChild(time);
@@ -57,6 +56,7 @@ window.addEventListener('load', () => {
           const { temp } = dataCurrent.main;
           const { main, icon } = dataCurrent.weather[0];
           const { speed } = dataCurrent.wind;
+
           // Set DOM Elements from the API --------------------
 
           // Current temperature
@@ -101,8 +101,8 @@ window.addEventListener('load', () => {
             cell.appendChild(temp);
           }
 
-          // Temperature forecast for next 5 days
-          for (let i = 0; i < 5; i += 1) {
+          // Temperature forecast for today
+          for (let i = 1; i < 6; i += 1) {
             tempHours.push(dataWeek.list[i].main.temp);
           }
 
