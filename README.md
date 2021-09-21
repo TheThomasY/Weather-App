@@ -8,9 +8,8 @@ A simple weather card built using vanilla Javascript and the [OpenWeather API](h
 
 ## Screenshots 📷
 
-![]()
+![](./screenshots/displays-screenshot.png)
 
-![]()
 
 ## Built With 🛠
 
