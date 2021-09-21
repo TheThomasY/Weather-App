@@ -1,6 +1,6 @@
 <h1 align="center">Weather Card</h1>
 
-<p>A simple weather card built using vanilla Javascript and the [OpenWeather API](https://openweathermap.org/api). You can switch between today's forecast and the next 5 days.</p>
+A simple weather card built using vanilla Javascript and the [OpenWeather API](https://openweathermap.org/api). You can switch between today's forecast and the next 5 days.
 
 ## Links 🌟
 
